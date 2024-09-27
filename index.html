@@ -1,28 +1,430 @@
-# AlertJS Documentation
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlertJS Documentation</title>
+    <meta name="description" content="Explore AlertJS, a customizable alert library for JavaScript. Learn how to use various alert types including confirmation, warning, success, and dynamic forms.">
+    <meta name="keywords" content="AlertJS, JavaScript, alerts, customizable alerts, confirmation dialog, warning alerts, success notifications, dynamic forms, web development, frontend development, SweetAlert alternative">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/gh/sumeetghimire/AlertJs/Alert.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        header {
+            background-color: #111311;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        h1, h2, h3 {
+            margin: 20px 0;
+        }
+        .demo-container {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 40px;
+        }
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .alert-button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-right: 10px;
+        }
+        .alert-button:hover {
+            opacity: 0.8;
+        }
+        .code-container {
+            flex: 1;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 15px;
+            overflow-x: auto;
+            max-width: 50%;
+        }
+        pre {
+            margin: 0;
+            background-color: #e7e7e7;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #111311;
+            color: white;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        .alert-button {
+            padding: 10px 20px; /* Padding for top/bottom and left/right */
+            border: none; /* Remove border */
+            border-radius: 5px; /* Rounded corners */
+            color: white; /* Text color */
+            cursor: pointer; /* Pointer cursor on hover */
+            transition: background-color 0.3s; /* Transition for hover effect */
+            font-size: 16px; /* Standard font size */
+            min-width: 150px; /* Minimum width to ensure uniformity */
+            height: 40px; /* Set a standard height */
+        }
+        .button-container {
+            display: flex; /* Use flexbox for layout */
+            align-items: flex-start; /* Align items at the start */
+            margin-bottom: 20px; /* Space between button/code blocks */
+        }
+        
+        .alert-button {
+            padding: 10px 20px; /* Adjust padding */
+            border: none; /* Remove border */
+            border-radius: 5px; /* Rounded corners */
+            color: white; /* Text color */
+            cursor: pointer; /* Pointer cursor on hover */
+            transition: background-color 0.3s; /* Transition for hover effect */
+            font-size: 16px; /* Font size */
+            min-width: 150px; /* Minimum width */
+            height: 40px; /* Standard height */
+            margin-right: 20px; /* Space between button and code */
+        }
+        
+        .code-container {
+            max-width: 600px; /* Set a max width for the code container */
+            background-color: #f8f9fa; /* Light background for code container */
+            padding: 10px; /* Padding inside code container */
+            border: 1px solid #ccc; /* Border for code container */
+            border-radius: 5px; /* Rounded corners */
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img src="mainLogo.png" alt="AlertJS Logo" class="logo">
+            <h1>AlertJS Documentation</h1>
+            <p>Your go-to solution for smart alerts!</p>
+        </div>
+    </header>
+    
+    <main class="container">
+        <section style="margin-top:20px">
+            <h2>Introduction</h2>
+            <p>Welcome to the documentation for AlertJS. This plugin allows you to create customizable alerts easily and efficiently.</p>
+        </section>
+        
+        <section>
+            <h2>Installation</h2>
+            <p>To install AlertJS, simply include the following script in your HTML file:</p>
+            <pre><code>&lt;script src="https://cdn.jsdelivr.net/gh/sumeetghimire/AlertJs/Alert.js"&gt;&lt;/script&gt;</code></pre>
+        </section>
+        
 
-Explore AlertJS, a customizable alert library for JavaScript. Learn how to use various alert types including confirmation, warning, success, and dynamic forms.
 
-## Table of Contents
-- [Introduction](#introduction)
-- [Installation](#installation)
-- [Demo](#demo)
-- [Footer](#footer)
+        <section>
+            <h2>Demo</h2>
+            <div class="demo-container">
+                <div class="button-container">
+                    <button class="alert-button" style="background-color: #007bff;" id="showConfirmation">Show Confirmation Alert</button>
+                    <div class="code-container">
+                        <h3>JavaScript Code</h3>
+                        <pre><code>
+document.getElementById('showConfirmation').addEventListener('click', function() {
+    new ConfirmationDialog({
+        title: 'Custom Modal',
+        message: 'This is a custom modal.',
+        position: 'top',
+        backgroundColor: '#ffcccb', 
+        confirmButtonBackgroundColor: 'red',
+        confirmButtonTextColor: '#ffffff',
+        onConfirm: function() {
+        }
+    });
+});</code></pre>
+                    </div>
+                </div>
 
----
+                <div class="button-container">
+                    <button class="alert-button" style="background-color: #dc3545;" id="showWarningAlert">Show Warning Alert</button>
+                    <div class="code-container">
+                        <h3>JavaScript Code</h3>
+                        <pre><code>
+document.getElementById('showWarningAlert').addEventListener('click', function() {
+    new AlertModal({
+        title: 'Warning Alert',
+        message: 'This is a warning alert message!',
+        backgroundColor: '#000', 
+        buttonBackgroundColor: '#dc3545', 
+        buttonTextColor: '#ffffff', 
+        onConfirm: function() {
+            console.log('Alert confirmed!');
+        }
+    });
+});</code></pre>
+                    </div>
+                </div>
 
-## Introduction
+                <div class="button-container">
+                    <button class="alert-button" style="background-color: #28a745;" id="ShowTripleButtonAlert">Show Triple Button Alert</button>
+                    <div class="code-container">
+                        <h3>JavaScript Code</h3>
+                        <pre><code>
+document.getElementById('ShowTripleButtonAlert').addEventListener('click', function() {
+    new TripleChoiceModal({
+        title: 'Confirm Action',
+        message: 'Do you want to proceed?',
+        yesButtonBackgroundColor: '#28a745', 
+        yesButtonTextColor: '#ffffff',       
+        noButtonBackgroundColor: '#ffc107',  
+        noButtonTextColor: '#000000',        
+        cancelButtonBackgroundColor: '#dc3545', 
+        cancelButtonTextColor: '#ffffff',  
+        backgroundColor: 'white', 
+        onYes: function() {
+            console.log('Yes selected!');
+        },
+        onNo: function() {
+            console.log('No selected!');
+        },
+        onCancel: function() {
+            console.log('Cancelled!');
+        }
+    });
+});</code></pre>
+                    </div>
+                </div>
 
-Welcome to the documentation for AlertJS. This plugin allows you to create customizable alerts easily and efficiently.
+                <div class="button-container">
+                    <button class="alert-button" style="background-color: #17a2b8;" id="showSucessMessage">Show Success Message</button>
+                    <div class="code-container">
+                        <h3>JavaScript Code</h3>
+                        <pre><code>
+document.getElementById('showSucessMessage').addEventListener('click', function() {
+    new SuccessNotificationModal({
+        title: 'Data Saved!',
+        message: 'Your data has been successfully saved.',
+        backgroundColor: '#e0ffe0', 
+        textColor: '#005500', 
+        checkmarkColor: '#007bff', 
+        fontSize: '1.8rem', 
+        duration: 2000 
+    });
+});</code></pre>
+                    </div>
+                </div>
 
----
+                <div class="button-container">
+                    <button class="alert-button" style="background-color: #6f42c1;" id="showFormModal">Show Form Alert</button>
+                    <div class="code-container">
+                        <h3>JavaScript Code</h3>
+                        <pre><code>
+document.getElementById('showFormModal').addEventListener('click', function() {
+    new DynamicFormModal({
+        title: 'User Registration',
+        inputs: [
+            { type: 'text', id: 'username', name: 'username', label: 'Username', placeholder: 'Enter your username' },
+            { type: 'text', id: 'email', name: 'email', label: 'Email', placeholder: 'Enter your email' },
+            { 
+                type: 'select', 
+                id: 'role', 
+                name: 'role', 
+                label: 'Role', 
+                options: [{ value: 'admin', text: 'Admin' }, { value: 'user', text: 'User' }] 
+            },
+            { type: 'checkbox', id: 'terms', name: 'terms', label: 'I agree to the terms and conditions' },
+            { 
+                type: 'radio', 
+                name: 'contactMethod', 
+                label: 'Preferred Contact Method', 
+                options: [
+                    { value: 'email', text: 'Email', id: 'contactEmail' }, 
+                    { value: 'phone', text: 'Phone', id: 'contactPhone' }
+                ] 
+            }
+        ],
+        onSubmit: function(data) {
+            console.log('Form submitted:', data);
+        },
+        onCancel: function() {
+            console.log('Form cancelled');
+        },
+        submitText: 'Register',
+        cancelText: 'Close',
+        backgroundColor: '#f9f9f9', 
+        buttonColor: '#28a745', 
+        cancelButtonColor: '#dc3545', 
+        position: 'center'
+    });
+});</code></pre>
+                    </div>
+                </div>
 
-## Installation
+                <div class="button-container">
+                    <button class="alert-button" style="background-color: #fd7e14;" id="showImageAlert">Show Image Alert</button>
+                    <div class="code-container">
+                        <h3>JavaScript Code</h3>
+                        <pre><code>
+document.getElementById('showImageAlert').addEventListener('click', function() {
+    new CustomImageModal({
+        title: 'Congratulations!',
+        message: 'You have successfully completed the task.',
+        imageSrc: 'https://fastly.picsum.photos/id/799/200/300.jpg?hmac=q6DulPHgFwTpoeoXzeVRLJ7-2cd-K69VyeJoIpUM5eg',
+        backgroundColor: '#f0f8ff', 
+        buttonColor: '#28a745', 
+        position: 'center' 
+    });
+});</code></pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
-To install AlertJS, simply include the following script in your HTML file:
-
-```html
-<script src="https://cdn.jsdelivr.net/gh/sumeetghimire/AlertJs/Alert.js"></script>
-
-
-Documentation 
-Visti: https://sumeetghimire.github.io/AlertJs-documentation/
+    <footer>
+        <p>&copy; 2024 AlertJS. All Rights Reserved.</p>
+    </footer>
+    
+    <script >
+        document.getElementById('showConfirmation').addEventListener('click', function() {
+            new ConfirmationDialog({
+                title: 'Custom Modal',
+                message: 'This is a custom modal.',
+                position: 'top',
+                backgroundColor: '#ffcccb', 
+                confirmButtonBackgroundColor: 'red',
+                confirmButtonTextColor: '#ffffff',
+                onConfirm: function() {
+                    console.log('Confirmed!');
+                }
+            });
+        });
+        
+    
+        document.getElementById('showWarningAlert').addEventListener('click', function() {
+            new AlertModal({
+                title: 'Warning Alert',
+                message: 'This is a warning alert message!',
+                backgroundColor: '#000', 
+                buttonBackgroundColor: '#dc3545', 
+                buttonTextColor: '#ffffff', 
+                onConfirm: function() {
+                    console.log('Alert confirmed!');
+                }
+            });
+        });
+        
+    
+        document.getElementById('ShowTripleButtonAlert').addEventListener('click', function() {
+                new TripleChoiceModal({
+                    title: 'Confirm Action',
+                    message: 'Do you want to proceed?',
+                    yesButtonBackgroundColor: '#28a745', 
+                    yesButtonTextColor: '#ffffff',       
+                    noButtonBackgroundColor: '#ffc107',  
+                    noButtonTextColor: '#000000',        
+                    cancelButtonBackgroundColor: '#dc3545', 
+                    cancelButtonTextColor: '#ffffff',  
+                    backgroundColor: 'white', 
+                    onYes: function() {
+                        console.log('Yes selected!');
+                    },
+                    onNo: function() {
+                        console.log('No selected!');
+                    },
+                    onCancel: function() {
+                        console.log('Cancelled!');
+                    }
+                });
+      
+            
+        });
+    
+        document.getElementById('showSucessMessage').addEventListener('click', function() {
+            new SuccessNotificationModal({
+                title: 'Data Saved!',
+                message: 'Your data has been successfully saved.',
+                backgroundColor: '#e0ffe0', // Light green background
+                textColor: '#005500', // Dark green text
+                checkmarkColor: '#007bff', // Blue checkmark
+                fontSize: '1.8rem', // Increased font size
+                duration: 2000 // Show for 2 seconds
+            });
+        
+        });
+    
+        document.getElementById('showFormModal').addEventListener('click', function() {
+            new DynamicFormModal({
+                title: 'User Registration',
+                inputs: [
+                    { type: 'text', id: 'username', name: 'username', label: 'Username', placeholder: 'Enter your username', class: 'custom-class' },
+                    { type: 'text', id: 'email', name: 'email', label: 'Email', placeholder: 'Enter your email' },
+                    { 
+                        type: 'select', 
+                        id: 'role', 
+                        name: 'role', 
+                        label: 'Role', 
+                        options: [{ value: 'admin', text: 'Admin' }, { value: 'user', text: 'User' }] 
+                    },
+                    { type: 'checkbox', id: 'terms', name: 'terms', label: 'I agree to the terms and conditions' },
+                    { 
+                        type: 'radio', 
+                        name: 'contactMethod', 
+                        label: 'Preferred Contact Method', 
+                        options: [
+                            { value: 'email', text: 'Email', id: 'contactEmail' }, 
+                            { value: 'phone', text: 'Phone', id: 'contactPhone' }
+                        ] 
+                    }
+                ],
+                onSubmit: function(data) {
+                    console.log('Form submitted:', data);
+                    // Handle form submission logic here
+                },
+                onCancel: function() {
+                    console.log('Form cancelled');
+                },
+                submitText: 'Register',
+                cancelText: 'Close',
+                backgroundColor: '#f9f9f9', // Custom background color
+                buttonColor: '#28a745', // Custom submit button color
+                cancelButtonColor: '#dc3545', // Custom cancel button color
+                position:'center'
+            });
+        
+        
+        });
+    
+        document.getElementById('showImageAlert').addEventListener('click', function() {
+    
+            new CustomImageModal({
+                title: 'Congratulations!',
+                message: 'You have successfully completed the task.',
+                imageSrc: 'https://fastly.picsum.photos/id/799/200/300.jpg?hmac=q6DulPHgFwTpoeoXzeVRLJ7-2cd-K69VyeJoIpUM5eg', // URL of your custom image
+                backgroundColor: '#f0f8ff', // Custom background color
+                buttonColor: '#28a745', // Custom button color
+                position: 'center' // Custom position
+            });
+    
+        
+        });
+    
+    </script>
+</body>
+</html>
