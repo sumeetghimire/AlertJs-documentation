@@ -127,7 +127,18 @@
         max-width: 100%; /* Make the code container full width */
     }
 }
+  /* General styling for the image */
+  .logo {
+    max-width: 100%; /* Ensure the image doesn't exceed the container's width */
+    height: auto; /* Maintain the aspect ratio */
+  }
 
+  /* Specific styling for mobile devices */
+  @media only screen and (max-width: 768px) {
+    .logo {
+      width: 50%; /* Adjust this percentage to control the image size on mobile */
+    }
+  }
     </style>
 </head>
 <body>
