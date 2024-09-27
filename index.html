@@ -112,7 +112,22 @@
             border: 1px solid #ccc; /* Border for code container */
             border-radius: 5px; /* Rounded corners */
         }
-        
+        /* Mobile styles */
+@media (max-width: 768px) {
+    .button-container {
+        flex-direction: column; /* Stack button and code on top of each other */
+    }
+    
+    .alert-button {
+        margin-bottom: 10px; /* Add space below the button */
+        width: 100%; /* Ensure the button takes full width on mobile */
+    }
+    
+    .code-container {
+        max-width: 100%; /* Make the code container full width */
+    }
+}
+
     </style>
 </head>
 <body>
