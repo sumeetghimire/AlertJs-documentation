@@ -1,16 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+    xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+          http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+    <!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
 
+    <url>
+        <loc>https://sumeetghimire.github.io/AlertJs-documentation/</loc>
+        <lastmod>2024-09-28T13:30:02+00:00</lastmod>
+        <changefreq>weekly</changefreq> <!-- Frequency of page updates -->
+        <priority>1.0</priority> <!-- High priority for the main page -->
+    </url>
 
-<url>
-  <loc>https://sumeetghimire.github.io/AlertJs-documentation/</loc>
-  <lastmod>2024-09-27T12:18:00+00:00</lastmod>
-</url>
+    <url>
+        <loc>https://sumeetghimire.github.io/AlertJs-documentation/installation</loc>
+        <lastmod>2024-09-28T13:30:02+00:00</lastmod>
+        <changefreq>monthly</changefreq> <!-- Lower frequency for installation guide -->
+        <priority>0.8</priority>
+    </url>
 
+    <url>
+        <loc>https://sumeetghimire.github.io/AlertJs-documentation/examples</loc>
+        <lastmod>2024-09-28T13:30:02+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority> <!-- Slightly lower than the main page but important for examples -->
+    </url>
 
 </urlset>
