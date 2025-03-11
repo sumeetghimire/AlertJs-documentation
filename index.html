@@ -2,18 +2,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AlertJS - Customizable JavaScript Alert Library | Confirmation, Warning, Success & Form Alerts | SweetAlert Alternative</title>
+<title>AlertJS - Customizable JavaScript Alert Library | Confirmation, Warning, Success & Form Alerts | SweetAlert Alternative | ALert Form | Multi Step Form|</title>
 <meta name="description" content="Explore AlertJS, a customizable alert library for JavaScript. Learn how to use various alert types including confirmation, warning, success, and dynamic forms. Perfect for web development.">
 <meta name="keywords" content="AlertJS, alert js, JavaScript, alerts, customizable alerts, confirmation dialog, warning alerts, success notifications, dynamic forms, web development, frontend development, SweetAlert alternative"><meta name="author" content="Sumeet Ghimire">
 <meta name="robots" content="index, follow">
 <meta property="og:title" content="AlertJS Documentation">
 <meta property="og:description" content="Discover AlertJS, the customizable JavaScript alert library perfect for web development.">
 <meta property="og:url" content="https://sumeetghimire.github.io/AlertJs-documentation/">
-<meta property="og:image" content="https://sumeetghimire.github.io/AlertJs-documentation/mainLogo.png"> <!-- Replace with the actual image path -->
+<meta property="og:image" content="https://sumeetghimire.github.io/AlertJs-documentation/mainLogo.png"> 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="AlertJS Documentation">
 <meta name="twitter:description" content="Explore AlertJS, a customizable alert library for JavaScript with multiple alert types.">
-<meta name="twitter:image" content="https://sumeetghimire.github.io/AlertJs-documentation/mainLogo.png"> <!-- Replace with the actual image path -->
+<meta name="twitter:image" content="https://sumeetghimire.github.io/AlertJs-documentation/mainLogo.png"> 
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdn.jsdelivr.net/gh/sumeetghimire/AlertJs/Alert.js"></script>
     <style>
@@ -182,7 +182,7 @@
                         <h3>JavaScript Code</h3>
                         <pre><code>
 document.getElementById('showConfirmation').addEventListener('click', function() {
-    new ConfirmationDialog({
+     ConfirmationDialog({
         title: 'Custom Modal',
         message: 'This is a custom modal.',
         position: 'top',
@@ -198,11 +198,13 @@ document.getElementById('showConfirmation').addEventListener('click', function()
 
                 <div class="button-container">
                     <button class="alert-button" style="background-color: #dc3545;" id="showWarningAlert">Show Warning Alert</button>
+
+
                     <div class="code-container">
                         <h3>JavaScript Code</h3>
                         <pre><code>
 document.getElementById('showWarningAlert').addEventListener('click', function() {
-    new AlertModal({
+     AlertModal({
         title: 'Warning Alert',
         message: 'This is a warning alert message!',
         backgroundColor: 'white', 
@@ -222,7 +224,7 @@ document.getElementById('showWarningAlert').addEventListener('click', function()
                         <h3>JavaScript Code</h3>
                         <pre><code>
 document.getElementById('ShowTripleButtonAlert').addEventListener('click', function() {
-    new TripleChoiceModal({
+     TripleChoiceModal({
         title: 'Confirm Action',
         message: 'Do you want to proceed?',
         yesButtonBackgroundColor: '#28a745', 
@@ -252,7 +254,7 @@ document.getElementById('ShowTripleButtonAlert').addEventListener('click', funct
                         <h3>JavaScript Code</h3>
                         <pre><code>
 document.getElementById('showSucessMessage').addEventListener('click', function() {
-    new SuccessNotificationModal({
+     SuccessNotificationModal({
         title: 'Data Saved!',
         message: 'Your data has been successfully saved.',
         backgroundColor: '#e0ffe0', 
@@ -271,7 +273,7 @@ document.getElementById('showSucessMessage').addEventListener('click', function(
                         <h3>JavaScript Code</h3>
                         <pre><code>
 document.getElementById('showFormModal').addEventListener('click', function() {
-    new DynamicFormModal({
+     DynamicFormModal({
         title: 'User Registration',
         inputs: [
             { type: 'text', id: 'username', name: 'username', label: 'Username', placeholder: 'Enter your username' },
@@ -312,12 +314,71 @@ document.getElementById('showFormModal').addEventListener('click', function() {
                 </div>
 
                 <div class="button-container">
+                    <button class="alert-button" style="background-color: #6f42c1;" id="showMultiStepForm">Show Multi Step Form Alert</button>
+                    <div class="code-container">
+                        <h3>JavaScript Code</h3>
+                        <pre><code>
+                            document.getElementById('showMultiStepForm').addEventListener('click', function() {
+                                multiStepForm({
+                                    steps: [
+                                        {
+                                            title: "Step 1: Personal Info",
+                                            message: "Please enter your personal details.",
+                                            formHtml: `
+                                                &lt;div class="form-group"&gt;
+                                                    &lt;input type="text" name="name" class="form-control" placeholder="Enter Name" required&gt;
+                                                &lt;/div&gt;
+                                            `,
+                                            validation: function() {
+                                                return document.querySelector('input[name="name"]').value.trim() !== '';
+                                            },
+                                            nextButtonText: "Next"
+                                        },
+                                        {
+                                            title: "Step 2: Contact Info",
+                                            message: "Please enter your contact information.",
+                                            formHtml: `
+                                                &lt;div class="form-group"&gt;
+                                                    &lt;input type="email" name="email" class="form-control" placeholder="Enter Email" required&gt;
+                                                &lt;/div&gt;
+                                            `,
+                                            validation: function() {
+                                                return document.querySelector('input[name="email"]').value.trim() !== '';
+                                            },
+                                            nextButtonText: "Next"
+                                        },
+                                        {
+                                            title: "Step 3: Account Info",
+                                            message: "Please enter your account details.",
+                                            formHtml: `
+                                                &lt;div class="form-group"&gt;
+                                                    &lt;input type="password" name="password" class="form-control" placeholder="Enter Password" required&gt;
+                                                &lt;/div&gt;
+                                            `,
+                                            validation: function() {
+                                                return document.querySelector('input[name="password"]').value.trim() !== '';
+                                            },
+                                            nextButtonText: "Submit"
+                                        }
+                                    ],
+                                    onComplete: function() {
+                                        console.log("Captured Data:", this.formData);  
+                                        alert("Form Completed!");
+                                    }
+                                });
+                            });
+                            </code></pre>
+                            
+                    </div>
+                </div>
+
+                <div class="button-container">
                     <button class="alert-button" style="background-color: #fd7e14;" id="showImageAlert">Show Image Alert</button>
                     <div class="code-container">
                         <h3>JavaScript Code</h3>
                         <pre><code>
 document.getElementById('showImageAlert').addEventListener('click', function() {
-    new CustomImageModal({
+     CustomImageModal({
         title: 'Congratulations!',
         message: 'You have successfully completed the task.',
         imageSrc: 'https://fastly.picsum.photos/id/799/200/300.jpg?hmac=q6DulPHgFwTpoeoXzeVRLJ7-2cd-K69VyeJoIpUM5eg',
@@ -329,16 +390,43 @@ document.getElementById('showImageAlert').addEventListener('click', function() {
                     </div>
                 </div>
             </div>
+
+
+            <!-- Progress bar -->
+
+            <div class="button-container">
+                <button class="alert-button" style="background-color: #6f42c1;" id="showProgressBar">Show Progress Bar</button>
+                <div class="code-container">
+                    <h3>JavaScript Code</h3>
+                    <pre><code>
+                        document.getElementById('showProgressBar').addEventListener('click', function() {
+                             progressBar({
+                                title: "File Upload",
+                            message: "Uploading your files...",
+                            progressBarColor: "#28a745",
+                            duration: 5000, 
+                            onProgressComplete: function() {
+                                alert('Upload complete!');
+                            }
+                            });
+                        
+                        });
+                    </code></pre>
+                </div>
+            </div>
+
+
+            
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2024 AlertJS. All Rights Reserved.</p>
+        <p>&copy; 2025 AlertJS. All Rights Reserved.</p>
     </footer>
     
     <script >
         document.getElementById('showConfirmation').addEventListener('click', function() {
-            new ConfirmationDialog({
+             ConfirmationDialog({
                 title: 'Custom Modal',
                 message: 'This is a custom modal.',
                 position: 'top',
@@ -353,7 +441,7 @@ document.getElementById('showImageAlert').addEventListener('click', function() {
         
     
         document.getElementById('showWarningAlert').addEventListener('click', function() {
-            new AlertModal({
+             AlertModal({
                 title: 'Warning Alert',
                 message: 'This is a warning alert message!',
                 backgroundColor: 'white', 
@@ -367,7 +455,7 @@ document.getElementById('showImageAlert').addEventListener('click', function() {
         
     
         document.getElementById('ShowTripleButtonAlert').addEventListener('click', function() {
-                new TripleChoiceModal({
+                 TripleChoiceModal({
                     title: 'Confirm Action',
                     message: 'Do you want to proceed?',
                     yesButtonBackgroundColor: '#28a745', 
@@ -392,7 +480,7 @@ document.getElementById('showImageAlert').addEventListener('click', function() {
         });
     
         document.getElementById('showSucessMessage').addEventListener('click', function() {
-            new SuccessNotificationModal({
+             SuccessNotificationModal({
                 title: 'Data Saved!',
                 message: 'Your data has been successfully saved.',
                 backgroundColor: '#e0ffe0', // Light green background
@@ -405,7 +493,7 @@ document.getElementById('showImageAlert').addEventListener('click', function() {
         });
     
         document.getElementById('showFormModal').addEventListener('click', function() {
-            new DynamicFormModal({
+             DynamicFormModal({
                 title: 'User Registration',
                 inputs: [
                     { type: 'text', id: 'username', name: 'username', label: 'Username', placeholder: 'Enter your username', class: 'custom-class' },
@@ -453,16 +541,78 @@ document.getElementById('showImageAlert').addEventListener('click', function() {
                 message: 'You have successfully completed the task.',
                 imageSrc: 'https://fastly.picsum.photos/id/799/200/300.jpg?hmac=q6DulPHgFwTpoeoXzeVRLJ7-2cd-K69VyeJoIpUM5eg', // URL of your custom image
                 backgroundColor: '#f0f8ff', // Custom background color
-                buttonColor: '#28a745', // Custom button color
-                position: 'center' // Custom position
+                buttonColor: '#28a745', 
+                position: 'center' 
             });
     
         
         });
 
+document.getElementById('showProgressBar').addEventListener('click', function() {
+    new progressBar({
+        title: "File Upload",
+    message: "Uploading your files...",
+    progressBarColor: "red",
+    duration: 5000, 
+    onProgressComplete: function() {
+        alert('Upload complete!');
+    }
+    });
+});
+
+document.getElementById('showMultiStepForm').addEventListener('click', function() {
+    multiStepForm({
+        steps: [
+            {
+                title: "Step 1: Personal Info",
+                message: "Please enter your personal details.",
+                formHtml: `
+                    <div class="form-group">
+                        <input type="text" name="name" class="form-control" placeholder="Enter Name" required>
+                    </div>
+                `,
+                validation: function() {
+                    return document.querySelector('input[name="name"]').value.trim() !== '';
+                },
+                nextButtonText: "Next"
+            },
+            {
+                title: "Step 2: Contact Info",
+                message: "Please enter your contact information.",
+                formHtml: `
+                    <div class="form-group">
+                        <input type="email" name="email" class="form-control" placeholder="Enter Email" required>
+                    </div>
+                `,
+                validation: function() {
+                    return document.querySelector('input[name="email"]').value.trim() !== '';
+                },
+                nextButtonText: "Next"
+            },
+            {
+                title: "Step 3: Account Info",
+                message: "Please enter your account details.",
+                formHtml: `
+                    <div class="form-group">
+                        <input type="password" name="password" class="form-control" placeholder="Enter Password" required>
+                    </div>
+                `,
+                validation: function() {
+                    return document.querySelector('input[name="password"]').value.trim() !== '';
+                },
+                nextButtonText: "Submit"
+            }
+        ],
+        onComplete: function() {
+            console.log("Captured Data:", this.formData);  
+            alert("Form Completed!");
+        }
+    });
+});
+
+
     </script>
 
-            <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-3K0G23NLL8"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
